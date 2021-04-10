@@ -1,0 +1,92 @@
+body {
+    margin: 50px;
+    padding: 50px;
+    background-color: #c3cfe2;
+}
+
+.parent {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(6, 1fr);
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+    position: relative; 
+    }
+
+    .div1 { grid-area: 1 / 1 / 2 / 2; }
+    .div2 { grid-area: 2 / 1 / 3 / 2; }
+    .div3 { grid-area: 3 / 1 / 4 / 2; }
+    .div4 { grid-area: 4 / 1 / 5 / 2; }
+    .div5 { grid-area: 5 / 1 / 6 / 2; }
+    .div6 { grid-area: 6 / 1 / 7 / 2; }
+
+    .div1 {
+        position: relative;
+       
+    }
+
+    .image__overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.6);
+        color:#fff;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        opacity: 0;
+        transition: opacity 0.45s;
+    }
+
+    .image__overlay--primary {
+        background-color: darkred;
+    }
+    
+    .image__overlay:hover {
+        opacity: 1
+    }
+   
+    @media (min-width: 768px) {
+        .parent {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: repeat(3, 1fr);
+            grid-column-gap: 0px;
+            grid-row-gap: 0px;
+            }
+            
+            .div1 { grid-area: 1 / 1 / 2 / 2; }
+            .div2 { grid-area: 1 / 2 / 2 / 3; }
+            .div3 { grid-area: 2 / 1 / 3 / 2; }
+            .div4 { grid-area: 2 / 2 / 3 / 3; }
+            .div5 { grid-area: 3 / 1 / 4 / 2; }
+            .div6 { grid-area: 3 / 2 / 4 / 3; }
+
+            .test {
+                width: 250px
+            }
+    }
+
+    @media (min-width: 1024px) {
+        .parent {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: repeat(2, 1fr);
+            grid-column-gap: 0px;
+            grid-row-gap: 0px;
+            }
+            
+            .div1 { grid-area: 1 / 1 / 2 / 2; }
+            .div2 { grid-area: 1 / 2 / 2 / 3; }
+            .div3 { grid-area: 1 / 3 / 2 / 4; }
+            .div4 { grid-area: 2 / 1 / 3 / 2; }
+            .div5 { grid-area: 2 / 2 / 3 / 3; }
+            .div6 { grid-area: 2 / 3 / 3 / 4; }
+
+            .test {
+                width: 200px
+            }
+    }
